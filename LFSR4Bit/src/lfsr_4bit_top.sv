@@ -33,7 +33,7 @@ module lfsr_4bit_top(
     always @(posedge clk)
     begin
        if(rst) begin
-           lfsr <= 4'b11111;
+           lfsr <= 4'b1111;
  
        end
        else begin
