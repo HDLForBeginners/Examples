@@ -24,7 +24,7 @@
 module lfsr_4bit_top(
     input clk,
     input rst,
-    output led
+    output logic led
     );
     
     
@@ -43,6 +43,7 @@ module lfsr_4bit_top(
            lfsr[0] <= lfsr[2]^lfsr[3];           
        end
     end
+    
     
     assign led = (lfsr > 4'd10) ? 1'b1 : 1'b0;
             

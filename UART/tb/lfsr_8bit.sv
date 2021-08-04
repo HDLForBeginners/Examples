@@ -25,6 +25,7 @@ module lfsr_8bit
   (
    input 	clk,
    input 	rst,
+   input    clk_en,
    output [7:0] data
    );
    
@@ -39,7 +40,7 @@ module lfsr_8bit
            lfsr <= 8'b11111111;
 	   
 	end
-	else begin
+	else if (clk_en) begin
            lfsr[7:1] <= lfsr[6:0]; 
            lfsr[0] <= ^lfsr_feedback;           
 	end

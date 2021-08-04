@@ -80,7 +80,7 @@ module uart_tx
    logic 			 uart_data_done;
    
    // buffer to store tx data while shifting
-   logic [7:0] 			 uart_data_shift_buffer;
+   logic [WORD_LENGTH-1:0] 			 uart_data_shift_buffer;
    
    // UART Baud Clock
    always @(posedge clk)
@@ -205,10 +205,10 @@ module uart_tx
    always @(posedge clk)
      begin
 	if(rst) begin
-           current_state = IDLE;
+           current_state <= IDLE;
 	end
 	else begin
-           current_state = next_state;
+           current_state <= next_state;
 	end
 	
      end
