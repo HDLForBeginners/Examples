@@ -18,14 +18,16 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "../src/version.vh"
+
 module NexysBaseProject_top
    (
     input         CLK,
-    input         RST_N
+    input         RST_N,
 
     // // Switches
     // input [15:0]  SW,
-    // input         BTNC,
+     input         BTNC,
     // input         BTNU,
     // input         BTNL,
     // input         BTNR,
@@ -110,13 +112,13 @@ module NexysBaseProject_top
     // // Ethernet
     // output        ETH_MDC,
     // inout         ETH_MDIO,
-    // output        ETH_RSTN,
+     output        ETH_RSTN,
     // inout         ETH_CRSDV,
     // input         ETH_RXERR,
     // inout [1:0]   ETH_RXD,
     // output        ETH_TXEN,
     // output [1:0]  ETH_TXD,
-    // output        ETH_REFCLK,
+     output        ETH_REFCLK
     // input         ETH_INTN
 
     // // QSPI Flash
@@ -146,8 +148,8 @@ module NexysBaseProject_top
      (
       .clk(CLK),
       .rst(rst),
-      .eth_clk(eth_clk),
-      .eth_rst(eth_rst),
+      .eth_clk_out(eth_clk),
+      .eth_rst_out(eth_rst),
       .ETH_REFCLK(ETH_REFCLK),
       .ETH_RSTN(ETH_RSTN)
       );
