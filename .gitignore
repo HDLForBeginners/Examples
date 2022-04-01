@@ -20,6 +20,8 @@
 !*.cpp
 !*.c
 !*.inc
+!*.py
+!*.xdc
 
 # ...even if they are in subdirectories
 !*/
