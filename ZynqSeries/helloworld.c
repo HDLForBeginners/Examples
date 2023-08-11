@@ -56,6 +56,7 @@
 #define SWITCH_CHANNEL 2
 #define LEDS_MASK 0x0F   // 4 leds
 #define SWITCHES_MASK 0x0F   // 4 switches
+#define XPAR_BRAM_0_BASEADDR  XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR
 
 
 int main()
@@ -102,14 +103,14 @@ int main()
 
 
     for (int i = 0; i < 16*4; i=i+4){
-    	XBram_WriteReg(XPAR_BRAM_0_DEVICE_ID,i,i);
+    	XBram_WriteReg(XPAR_BRAM_0_BASEADDR,i,i);
 
     }
 
     int out_data;
 
     for (int i = 0; i < 16*4; i=i+4){
-    	out_data = XBram_ReadReg(XPAR_BRAM_0_DEVICE_ID,i);
+    	out_data = XBram_ReadReg(XPAR_BRAM_0_BASEADDR,i);
 		xil_printf("%d: %d\n\r",i, out_data);
 
     }
